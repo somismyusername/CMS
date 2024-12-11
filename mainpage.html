@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management System</title>
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://via.placeholder.com/100x50" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Sign In</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="complaint-form">
+            <h2>Add a Complaint</h2>
+            <button id="addComplaintBtn" class="add-complaint-btn">Add New Complaint</button>
+        </section>
+
+        <section class="filter-section">
+            <h2>Filter Complaints</h2>
+            <label for="filter">Sort by:</label>
+            <select id="filter">
+                <option value="rating">Rating</option>
+                <option value="recent">Recently Uploaded</option>
+                <option value="older">Older Uploads</option>
+            </select>
+            <input type="text" id="searchInput" placeholder="Search complaints..." />
+        </section>
+
+        <section class="image-container">
+            <h2>Complaints</h2>
+        </section>
+        <div class="complaints-container">
+            <!-- Complaints will dynamically appear here -->
+        </div>
+        
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Mission</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Complaint Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="add-complaint-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-add-complaint">&times;</span>
+            <h2>Add New Complaint</h2>
+            <form id="newComplaintForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="complaintImage">Upload Image:</label>
+                    <input type="file" id="complaintImage" name="image" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="uploaderName">Your Name:</label>
+                    <input type="text" id="uploaderName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Number:</label>
+                    <input type="tel" id="contact" name="contact" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Complaint Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Complaint</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+<script src="mainpage_updated.js"></script>
+
+
+</body>
+</html>
